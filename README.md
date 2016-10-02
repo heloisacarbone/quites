@@ -2,10 +2,10 @@
 Aplicação para divisão de contas
 
 ## Para rodar
--> No terminal
-	node app.js
--> No navegador
-	http://localhost:8080/html/index.html
+-> No terminal   
+	<b>node app.js   </b>   
+-> No navegador   
+	<b>http://localhost:8080/html/index.html</b>   
 
 ## Descrição
 Projeto dividido em tres partes:
