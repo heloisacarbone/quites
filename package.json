@@ -1,0 +1,13 @@
+// package.json
+// Define start and test targets
+
+{
+  "name": "quites",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "devDependencies": {
+    "mocha": "^1.17.1"
+  }
+}

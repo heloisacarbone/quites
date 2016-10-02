@@ -1,0 +1,7 @@
+{	
+	
+    "httpServerPort": 8080,
+    "staticContentExpire": 1,
+    "staticContentRoot": "./frontend"
+	
+}
