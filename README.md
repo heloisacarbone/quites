@@ -1,9 +1,11 @@
 # Quites!
 Aplicação para divisão de contas
 
-## Para rodar 
+## Para rodar
+-> No terminal
 	node app.js
-
+-> No navegador
+	http://localhost:8080/html/index.html
 
 ## Descrição
 Projeto dividido em tres partes:
