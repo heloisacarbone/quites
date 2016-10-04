@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quites!</title>
+    
+    <script src="../libs/jquery-2.2.2.js"></script>
+    <script src="../js/cookies.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+    <script src="../js/registration_login.js"></script>
+</head>	
+<body>
+	<h1>Quites! - Registro</h1>
+	<button onclick="location.href = 'index.html';">Login</button>
+		
+	<div class="register">
+		<p id="notice" style="color:red"></p>
+
+        <h3>Username *</h3> 
+        <input type="text" id="reg_username" />
+
+        <h3>Email *</h3> 
+        <input type="email" id="reg_email" />
+
+        <h3>Password *</h3>
+        <input type="password" id="reg_password" />
+
+        <h3>Repeat Password *</h3>
+        <input type="password" id="reg_rep_password" />
+
+        <h3>Name *</h3> 
+        <input type="text" id="reg_name" />
+
+        <h3>Date of Birth *</h3> 
+        <input type="date" id="reg_dob" data-date-inline-picker="true" />
+
+        <h3>Gender *</h3> 
+        <select id="reg_gender">
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+        		
+        <button class="circlebutton" onclick="registerUser()">Sign Up</button>
+		
+    </div>
+</body>
+</html>

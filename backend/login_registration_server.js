@@ -10,7 +10,7 @@ function registration(socket, req) {
     var message_to_client = {};
       
     if (req.message !== null && req.message !== undefined) {
-        database['users'].add(req.message.username, req.message.email, req.message.password, req.message.name, req.message.birthdate, req.message.gender, req.message.preferences, req.message.image, function (err, user) {
+        database['users'].add(req.message.username, req.message.email, req.message.password, req.message.name, req.message.birthdate, req.message.gender, function (err, user) {
             if (err || !user) {
                 console.error('database.add: Could not add new user. err:', err);
                 message_to_client['data'] = false;

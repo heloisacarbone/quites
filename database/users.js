@@ -17,8 +17,7 @@ module.exports = function () {
                 if (err) {
                     callback(err, undefined);
                 } else if (!obj) {
-                    var tokens = createTokens.extractTokens(name);
-                    users.insert({email: email, pass: pass, name: name, tokens: tokens, registerDate: new Date(), birthdate: birthdate, gender: gender, preferences: preferences, image: userImage}, {safe: true}, callback);
+                    users.insert({username: username, email: email, pass: pass, name: name, registerDate: new Date(), birthdate: birthdate, gender: gender}, {safe: true}, callback);
                 } else {
                     if (email === obj.email) {
                         callback({err: 'User email already in use'}, undefined);    

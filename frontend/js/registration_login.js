@@ -29,8 +29,6 @@ function login() {
     });
 }
 
-
-// TODO: NAO ARRUMEI ESSE AINDA
 function registerUser() {
 	var socket = io.connect("/"); 
 
@@ -39,41 +37,29 @@ function registerUser() {
 
 	if (pass === rpass) {
 		$(".error").html("");
-
-    var profileImage = document.getElementById("profileImage").src;
-
-    if(profileImage ==  "http://www.mv.mu/en/forfait/img/point_interrogation.png"){
-      profileImage = null;
-    }
      
-
 		var data = { 
 	        action_type: "registration",
 	        message: {
+	        	username: $('#reg_username').val(),
 	            email: $('#reg_email').val(),
 	            password: pass,
 	            name: $('#reg_name').val(),
 	            birthdate: $("#reg_dob").val(),
-	            gender: $("#reg_gender option:selected").val(),
-              image: profileImage
+	            gender: $("#reg_gender option:selected").val()
 
 	        }, 
 	        user_id: undefined      
 	    };
 
-	    data['message']['preferences'] = [];
-	    $('#reg_preferences input:checked').each( function () {
-	        data['message']['preferences'].push($(this).attr('name'));
-	    });
-
 	    socket.send(JSON.stringify(data)); 
 
+	    $('#reg_username').val('');
 	    $('#reg_password').val('');
 	    $('#reg_rep_password').val('');
 	    $('#reg_email').val('');
 	    $('#reg_name').val('');
 	    $('#reg_dob').val('');
-	    $("#reg_preferences input:checked").attr('checked', false)
 
 		socket.on("message",function(message){  
 	               
@@ -81,7 +67,7 @@ function registerUser() {
 	   
 	        if (message.data) {
 	          
-	            openEcoForm(message.id);
+	            location.href = "index.html";
 	            
 	        } else {
 	            alert("We were not able to create your account");
