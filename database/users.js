@@ -30,6 +30,10 @@ module.exports = function () {
             users.findOne({$or: [{email: email}, {username: username}]}, _userNotFound_then_add);
         },
 
+        remove: function (username, callback) {
+            users.remove({username: username}, callback);
+        },
+        
         check: function (identification, pass, callback) {
             users.findOne({ $or: [{email: identification}, {username: identification}], pass: pass}, callback);
         },

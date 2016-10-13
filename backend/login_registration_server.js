@@ -6,7 +6,7 @@ var database = require('./database_controller.js');
 var socketio = require('socket.io');
 
 // Registration of a user in the system
-function registration(socket, req) {
+function registration(req, callback) {
     var message_to_client = {};
       
     if (req.message !== null && req.message !== undefined) {
@@ -15,12 +15,12 @@ function registration(socket, req) {
                 console.error('database.add: Could not add new user. err:', err);
                 message_to_client['data'] = false;
                 message_to_client['err'] = err;
-                socket.send(JSON.stringify(message_to_client));
+                callback(message_to_client);
             } else {
                 console.log('database.add: User ', req.message.email, " was successfully created", user);
                 message_to_client['data'] = true;
                 message_to_client['id'] = user.ops[0]._id;
-                socket.send(JSON.stringify(message_to_client));
+                callback(message_to_client);
             }
         });
     } 
@@ -28,7 +28,7 @@ function registration(socket, req) {
 }
 
 // When a user try to login into the system, this function checks the user information
-function requestLogin(socket, req) {
+function requestLogin(req, callback) {
     var message_to_client = {};
         
     if (req.message !== null && req.message !== undefined) {
@@ -36,24 +36,28 @@ function requestLogin(socket, req) {
             if (err || !user) {
                 console.error('database.check: Could not authenticate user. err:', err);
                 message_to_client['data'] = false;
-                socket.send(JSON.stringify(message_to_client));
+                callback(message_to_client);
             } else {
                 message_to_client['client_id'] = user._id;
                 console.log('database.check: User ', req.message.email, " was authenticated", user);
                 message_to_client['data'] = true;
-                socket.send(JSON.stringify(message_to_client));
+                callback(message_to_client);
             }
         });
     }
 }
 
 function requestListener(socket, req) {
-  switch (req.action_type) {
+    var message = function(msg){
+        socket.send(JSON.stringify(msg));
+    };
+
+    switch (req.action_type) {
         case 'registration':
-            registration(socket, req);
+            registration(req, message);
             break;
         case 'login':
-        	requestLogin(socket, req);
+        	requestLogin(req, message);
         	break;
         default:
             return false;
@@ -63,3 +67,5 @@ function requestListener(socket, req) {
 }
 
 exports.requestListener = requestListener;
+exports.requestLogin = requestLogin;
+exports.registration = registration;
