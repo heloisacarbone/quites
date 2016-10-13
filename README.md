@@ -11,7 +11,7 @@ Aplicação para divisão de contas
 ## Para rodar
 -> No terminal   
 	<b>sh run.sh</b>   
-	Script que roda testes + aplicacao
+	Script que roda testes + aplicacao   
 -> No navegador   
 	<b>http://localhost:8080/html/index.html</b>   
 
