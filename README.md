@@ -5,18 +5,13 @@ Aplicação para divisão de contas
 -> mongodb Community Edition - https://docs.mongodb.org/manual/installation/  
 -> nodejs - https://nodejs.org/en/download/  
     nodejs libraries (using "npm install"):  
-        - mongodb  
-        - express  
-        - nodemailer  
-        - socket.io  
-        - async  
-        - http  
-        -> If the program crash even after installing all this ones and show some other name, please forgive me and install this other thing that the program is claimming for using the same command "npm install 'library'"  
+-> As libs do nodejs podem ser instaladas dando npm install na raiz do projeto. O modulo package.json cuida disso 
 
 
 ## Para rodar
 -> No terminal   
-	<b>node app.js   </b>   
+	<b>sh run.sh</b>   
+	Script que roda testes + aplicacao   
 -> No navegador   
 	<b>http://localhost:8080/html/index.html</b>   
 
