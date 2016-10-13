@@ -18,9 +18,13 @@ function initialize_modules(main_database) {
 
 var exportable = {
 
-    connect: function (callback) {
-    
+    connect: function (type, callback) {
+        
         var mongo_uri = 'mongodb://127.0.0.1:27017/quites';
+
+        if (type === "prod") {
+            mongo_uri = 'mongodb://heroku_xj2nrdfv:d2vp9lmo3vsqq0n0c5lebegk1r@ds057386.mlab.com:57386/heroku_xj2nrdfv';
+        }
 
         console.log('database.connect: Connecting @', mongo_uri);
 
@@ -28,8 +32,8 @@ var exportable = {
     },
 
     initialize: function (callback) {
-
-        exportable.connect(function (error, client) {
+        // mudar para dev quando for rodar
+        exportable.connect("prod", function (error, client) {
             if (error) {
                 throw error;
             }
