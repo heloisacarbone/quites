@@ -17,9 +17,9 @@ var login_registration_server = require('./backend/login_registration_server.js'
 function initializeServer() {
 	var app = express();
 	app.use(express.static('./frontend'));
-	 
-	var server = http.createServer(app).listen(server_config.httpServerPort, function(){
-		console.log('app.js @', server_config.httpServerPort);
+	var port = (process.env.PORT ||  server_config.httpServerPort);
+	var server = http.createServer(app).listen(port, function(){
+		console.log('app.js @', port);
 	});
 	io = socketio.listen(server); 
 	io.sockets.on("connection", requestHandler);
