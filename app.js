@@ -10,7 +10,7 @@ var io;
 var server_config = require('./config/server.json');
 var database = require('./backend/database_controller.js');
 var login_registration_server = require('./backend/login_registration_server.js');
- 
+
  /*
  	Initializes the server, specifying the folder that contains all the Frontend size to listen for requests
  */
@@ -21,7 +21,7 @@ function initializeServer() {
 	var server = http.createServer(app).listen(port, function(){
 		console.log('app.js @', port);
 	});
-	io = socketio.listen(server); 
+	io = socketio.listen(server);
 	io.sockets.on("connection", requestHandler);
 
 }
@@ -32,9 +32,11 @@ function initializeServer() {
 	{
 		action_type: login/registration/news_post/search
 		action: function-name
-		message: everything that needs to be sent 
+		message: everything that needs to be sent
 		user_id
-	} 
+	}
+    teste
+
 */
 function requestHandler(socket){
 
