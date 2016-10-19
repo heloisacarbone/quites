@@ -8,7 +8,7 @@ var socketio = require('socket.io');
 // Registration of a user in the system
 function registration(req, callback) {
     var message_to_client = {};
-      
+
     if (req.message !== null && req.message !== undefined) {
         database['users'].add(req.message.username, req.message.email, req.message.password, req.message.name, req.message.birthdate, req.message.gender, function (err, user) {
             if (err || !user) {
@@ -23,14 +23,14 @@ function registration(req, callback) {
                 callback(message_to_client);
             }
         });
-    } 
+    }
 
 }
 
 // When a user try to login into the system, this function checks the user information
 function requestLogin(req, callback) {
     var message_to_client = {};
-        
+
     if (req.message !== null && req.message !== undefined) {
         database['users'].check(req.message.identification, req.message.password, function (err, user) {
             if (err || !user) {
@@ -67,5 +67,3 @@ function requestListener(socket, req) {
 }
 
 exports.requestListener = requestListener;
-exports.requestLogin = requestLogin;
-exports.registration = registration;

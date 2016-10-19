@@ -1,19 +1,19 @@
 function login() {
 	var socket = io.connect("/");
-	var data = { 
+	var data = {
         action_type: "login",
         message: {
             identification: $('#loginEmail').val(),
             password: $('#loginPassword').val(),
-        }, 
+        },
         user_id: undefined
-                
-    };
-    
-    socket.send(JSON.stringify(data)); 
 
-    socket.on("message",function(message){  
-        
+    };
+
+    socket.send(JSON.stringify(data));
+
+    socket.on("message",function(message){
+
         message = JSON.parse(message);
         console.log(message); /*converting the data into JS object */
         if (message.data) {
@@ -25,20 +25,20 @@ function login() {
 
         $('#loginEmail').val('');
         $('#loginPassword').val('');
-        
+
     });
 }
 
 function registerUser() {
-	var socket = io.connect("/"); 
+	var socket = io.connect("/");
 
 	var pass = $('#reg_password').val();
 	var rpass = $("#reg_rep_password").val();
 
 	if (pass === rpass) {
 		$(".error").html("");
-     
-		var data = { 
+
+		var data = {
 	        action_type: "registration",
 	        message: {
 	        	username: $('#reg_username').val(),
@@ -48,11 +48,11 @@ function registerUser() {
 	            birthdate: $("#reg_dob").val(),
 	            gender: $("#reg_gender option:selected").val()
 
-	        }, 
-	        user_id: undefined      
+	        },
+	        user_id: undefined
 	    };
 
-	    socket.send(JSON.stringify(data)); 
+	    socket.send(JSON.stringify(data));
 
 	    $('#reg_username').val('');
 	    $('#reg_password').val('');
@@ -61,17 +61,18 @@ function registerUser() {
 	    $('#reg_name').val('');
 	    $('#reg_dob').val('');
 
-		socket.on("message",function(message){  
-	               
+		socket.on("message",function(message){
+
 	        message = JSON.parse(message);
-	   
+
 	        if (message.data) {
-	          
+
 	            location.href = "index.html";
-	            
+
 	        } else {
+				
 	            alert("We were not able to create your account");
-	            
+
 	        }
 	    });
 	} else {
