@@ -2,6 +2,7 @@
     This module has all the functions of insert, update and search for the database in the collections of users
 */
 var mongo = require('mongodb');
+var createTokens = require('../backend/create_tokens.js');
 
 module.exports = function () {
 
@@ -17,7 +18,8 @@ module.exports = function () {
                 if (err) {
                     callback(err, undefined);
                 } else if (!obj) {
-                    users.insert({username: username, email: email, pass: pass, name: name, registerDate: new Date(), birthdate: birthdate, gender: gender}, {safe: true}, callback);
+                    var tokens = createTokens.extractTokens(name);
+                    users.insert({username: username, email: email, pass: pass, name: name, tokens: tokens, registerDate: new Date(), birthdate: birthdate, gender: gender}, {safe: true}, callback);
                 } else {
                     if (email === obj.email) {
                         callback({err: 'User email already in use'}, undefined);    
@@ -37,7 +39,14 @@ module.exports = function () {
         check: function (identification, pass, callback) {
             users.findOne({ $or: [{email: identification}, {username: identification}], pass: pass}, callback);
         },
-       
+
+        getSearchUsers: function (filter, callback) {
+            var tokenizedFilter = createTokens.extractTokens(filter);
+            console.log(tokenizedFilter);    
+
+            users.find({$or: [{email: filter}, {username: filter}, {'tokens': {$in:tokenizedFilter}}]}).toArray(callback);
+        },
+
         getUserEmail: function (email, callback) {
             users.findOne({email: email}, callback);
         },

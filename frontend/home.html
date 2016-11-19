@@ -7,11 +7,15 @@
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
 	<script src="js/user_perfil.js"></script>
+	<script src="js/search.js"></script>
 </head>
 <body onload="loadUserPerfil()">
 
 	<h1>Quites!</h1>
 	<h2 id="usernamePerfil"></h2>
+	<button type="button" onclick="addDebt()">Adicionar Divida</button>
+	<input type="text" id="searchbar" placeholder="Procurar amigo">
+	<div id="searchUsers"></div>
 
 
 	
