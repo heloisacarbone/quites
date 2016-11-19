@@ -10,6 +10,7 @@ var io;
 var server_config = require('./config/server.json');
 var database = require('./backend/database_controller.js');
 var login_registration_server = require('./backend/login_registration_server.js');
+var user_action_controller = require('./backend/user_action_controller.js');
 
  /*
  	Initializes the server, specifying the folder that contains all the Frontend size to listen for requests
@@ -47,6 +48,7 @@ function requestHandler(socket){
         	The data sent from the frontend size is handled for the request listeners for all those classes
         */
         login_registration_server.requestListener(socket, data);
+        user_action_controller.requestListener(socket, data);
 
     });
 }

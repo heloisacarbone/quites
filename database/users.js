@@ -37,7 +37,7 @@ module.exports = function () {
         check: function (identification, pass, callback) {
             users.findOne({ $or: [{email: identification}, {username: identification}], pass: pass}, callback);
         },
-        
+       
         getUserEmail: function (email, callback) {
             users.findOne({email: email}, callback);
         },

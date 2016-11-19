@@ -33,7 +33,7 @@ var exportable = {
 
     initialize: function (callback) {
         // mudar para dev quando for rodar
-        exportable.connect("prod", function (error, client) {
+        exportable.connect("dev", function (error, client) {
             if (error) {
                 throw error;
             }
