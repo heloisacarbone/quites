@@ -40,4 +40,5 @@ function displayUsers(users) {
 
 function closeSearch() {
 	$("#searchUsers").html("");
+	$("#searchbar").val("");
 }

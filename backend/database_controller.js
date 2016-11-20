@@ -5,7 +5,8 @@
 var mongo = require('mongodb');
 
 var database_modules_list = [
-    'users'
+    'users',
+    'debts'
 ];
 
 function initialize_modules(main_database) {
@@ -33,7 +34,7 @@ var exportable = {
 
     initialize: function (callback) {
         // mudar para dev quando for rodar
-        exportable.connect("dev", function (error, client) {
+        exportable.connect("prod", function (error, client) {
             if (error) {
                 throw error;
             }

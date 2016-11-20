@@ -10,14 +10,26 @@
 	<script src="js/user_perfil.js"></script>
 	<script src="js/search.js"></script>
 	<script src="js/friends.js"></script>
+	<script src="js/debts.js"></script>
 </head>
 <body onload="loadUserPerfil()">
 
 	<h1>Quites!</h1>
 	<h2 id="usernamePerfil"></h2>
-	<button id="addDebt" type="button" onclick="addDebt()">Adicionar Divida</button>
+	<button id="addDebt" type="button" onclick="openOverlay()">Adicionar Divida</button>
 	<input type="text" id="searchbar" placeholder="Procurar amigo" >
 	<div id="searchUsers"></div>
+	<section class="overlay">
+		<div class="debt">
+			<div>
+				<div><h2>Adicionar Divida</h2></div>
+				<div><button type="button" onClick="closeOverlay()">X</button></div>
+			</div>
+			<input type="text" placeholder="R$ 000.00">
+			<div id="friendsdebt"></div>
+			<button type="button" onclick="addDebt()">Adicionar Divida</button>
+		</div>
+	</section>
 
 
 	

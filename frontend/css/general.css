@@ -55,3 +55,57 @@ input {
 	float: left;
 	width: 8vw
 }
+
+section.overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0, 0, 0, 0.75);
+    z-index:9999;
+    color:white;
+    visibility: hidden;
+}
+
+section.overlay .debt {
+	position: relative;
+	top: 80px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 370px;
+	max-height: 600px;
+	background-color:#A9A9A9;
+	color:#F4F4F4;
+	border-radius: 5px;
+	padding: 10px;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+	overflow-x:auto;
+
+}
+
+section.overlay .debt div {
+	float: left;
+}
+
+#friendsdebt {
+	width: 350px;
+}
+
+#friendsdebt div {
+	width: 350px;
+	margin: 10px;
+	
+}
+
+#friendsdebt div .label {
+	float: left;
+	font-size: 30px;
+	width: 100px;
+}
+
+#friendsdebt div .inputcheck {
+	float: left;
+	width: 50px;
+	line-height: -10px;
+}
