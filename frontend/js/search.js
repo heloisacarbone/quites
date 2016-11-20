@@ -32,7 +32,7 @@ $(document).keypress(function(event) {
 function displayUsers(users) {
 	var htmlusers = "<div id='searchUsersDiv'><h3>Resultados da Busca</h3>";
 	users.forEach(function(u) {
-		htmlusers += "<div><h4>"+u.name+"</h4><button type='button' onclick='addFriend(\""+u._id+"\")'>Adicionar Amigo</button></div>";
+		htmlusers += "<div><div id='friendNameDiv'><h4>"+u.name+"</h4></div><div id=buttonFriendDiv><button type='button' onclick='addFriend(\""+u._id+"\")'>Adicionar Amigo</button></div></div>";
 	});
 	htmlusers += "</div>";
 	$("#searchUsers").html(htmlusers);
