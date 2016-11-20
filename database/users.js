@@ -47,6 +47,10 @@ module.exports = function () {
             users.find({$or: [{email: filter}, {username: filter}, {'tokens': {$in:tokenizedFilter}}]}).toArray(callback);
         },
 
+        addFriend: function (userId, friendId, friendName, callback) {
+            users.update({_id: new mongo.ObjectID(userId)}, {$push: { friends: {id: friendId, name: friendName}}}, {safe: true}, callback);
+        }, 
+
         getUserEmail: function (email, callback) {
             users.findOne({email: email}, callback);
         },

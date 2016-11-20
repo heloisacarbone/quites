@@ -24,4 +24,18 @@ describe('Users Actions', function() {
  
   	});
 
+    it('it should add an user as a friend', function() {
+
+      database['users'].add("leco", "leco", "leco", "leco", "2016-10-05","male", function(err, leco){
+        database['users'].add("deco", "deco", "deco", "deco", "2016-10-05","male", function(err, deco){          
+          database['users'].addFriend(leco._id, deco._id, deco.name, function(err, users) {
+            assert.ifError(err);
+            assert.ok(!obj);
+          });
+        });
+      
+      });
+      
+    });
+
 });
