@@ -30,10 +30,14 @@ $(document).keypress(function(event) {
 });
 
 function displayUsers(users) {
-	var htmlusers = "<div id='searchUsersDiv'><h3>Resultados da Busca</h3>";
+	var htmlusers = "<div id='searchUsersDiv'><div><div id='friendNameDiv'><h3>Resultados da Busca</h3></div><div id='buttonFriendDiv'><button id='exit type='button' onclick='closeSearch()'>X</button></div></div>";
 	users.forEach(function(u) {
-		htmlusers += "<div><div id='friendNameDiv'><h4>"+u.name+"</h4></div><div id=buttonFriendDiv><button type='button' onclick='addFriend(\""+u._id+"\")'>Adicionar Amigo</button></div></div>";
+		htmlusers += "<div><div id='friendNameDiv'><h4>"+u.name+"</h4></div><div id='buttonFriendDiv'><button type='button' onclick='addFriend(\""+u._id+"\")'>Adicionar Amigo</button></div></div>";
 	});
 	htmlusers += "</div>";
 	$("#searchUsers").html(htmlusers);
+}
+
+function closeSearch() {
+	$("#searchUsers").html("");
 }
