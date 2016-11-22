@@ -13,12 +13,21 @@
 	<script src="js/debts.js"></script>
 </head>
 <body onload="loadUserPerfil()">
-
-	<h1>Quites!</h1>
-	<h2 id="usernamePerfil"></h2>
-	<button id="addDebt" type="button" onclick="openOverlay()">Adicionar Divida</button>
-	<input type="text" id="searchbar" placeholder="Procurar amigo" >
-	<div id="searchUsers"></div>
+	<div class="page">
+		<div class="left"> 
+			<h1>Quites!</h1>
+			<h2 id="usernamePerfil"></h2>
+			<div>
+				<button id="addDebt" type="button" onclick="openOverlay()">Adicionar Divida</button>
+				<button type="button" onclick="viewDebt()">Ver Dividas</button>
+				<input type="text" id="searchbar" placeholder="Procurar amigo" >
+			</div>
+			<div id="searchUsers"></div>
+		</div>
+		<div class="right">
+			djsadhasudhasj
+		</div>
+	</div>
 	<section class="overlay">
 		<div class="debt">
 			<div>
@@ -28,6 +37,7 @@
 			<input type="text" placeholder="R$ 000.00">
 			<div id="friendsdebt"></div>
 			<button type="button" onclick="addDebt()">Adicionar Divida</button>
+
 		</div>
 	</section>
 

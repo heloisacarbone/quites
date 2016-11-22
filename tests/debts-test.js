@@ -10,7 +10,7 @@ describe('Debts', function() {
                 {id: admin._id, name: admin.name},
                 {id: devel._id, name: devel.name}
               ]; 
-              database['debts'].add(friends, "212.2", "split", function (err, debt) {         
+              database['debts'].add(admin._id, friends, "212.2", "split", function (err, debt) {         
 
                 assert.ifError(err);
                 assert.ok(!debt);

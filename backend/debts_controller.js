@@ -6,7 +6,7 @@ function addDebt(socket, req) {
 
     if (req.message !== null && req.message !== undefined) {
 
-        database['debts'].add(req.message.friends,req.message.debt, "split", function (err, debt) {
+        database['debts'].add(req.message.user_id, req.message.friends,req.message.debt, "split", function (err, debt) {
             if (err || !debt) {
                 console.error('database.add: Could not add new debt. err:', err);
                 message_to_client['data'] = undefined;

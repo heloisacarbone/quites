@@ -10,8 +10,8 @@ module.exports = function () {
             console.log("database.users: users collection created");
         },
 
-        add: function (users, value, division, callback) {
-            debts.insert({users: users, value: value, division: division}, {safe: true}, callback);
+        add: function (owner, users, value, division, callback) {
+            debts.insert({owner:owner, users: users, value: value, division: division}, {safe: true}, callback);
         }
     };
 }
