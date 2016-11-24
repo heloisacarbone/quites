@@ -1,35 +1,99 @@
+body{
+	/*font-family: Tahoma, Geneva, sans-serif;*/
+
+	background-color: rgba(60, 119, 40, 0.21);
+}
+
+.btnSair{
+float: right;
+width: 21px;
+padding: 4px;
+border-radius: 200px;
+
+}
+.form {
+	margin: 41px;
+}
+
+.buttons{
+
+	margin:auto;
+	width:412px;
+	padding:3px;
+	margin-top: 26px;
+
+}
+.box{
+
+background-color: #fff;
+width: 500px;
+margin: auto;
+margin-top: 40px;
+padding: 20px;
+
+}
+
+.boxHome{
+
+padding-top: 45px;
+height: 200px;
+
+}
+
+.boxIndex{
+	padding-top: 1px;
+
+}
+
+.header{
+height: 40px;
+background-color: #253D1D;
+margin-top: -8px;
+margin-left: -8px;
+/*padding: 3px;*/
+}
+
+.logo{
+	font-size: 17px;
+	font-family: "Arial", Gadget, sans-serif;
+	margin-left: 10px;
+}
+
+
 .page {
-	width: 100vw;
-	height: 100vh;
+	/*width: 100vw;*/
+
+	height: 200px;
 }
 
-.left {
+/*.left {
 	float: left;
 	width: 50 vw;
 	height: 100vh;
-}
+}*/
 
-.left div {
+/*.left div {
 	width: 50 vw;
 	text-align: center;
 
-}
-.right {
-	float: left;
+}*/
+/*.right {
+	/*float: left;
 	width: 50 vw;
 	height: 100vh;
-	
 }
-
+*/
 h1 {
-	color: #253D1D;
-	font-size: 15vh;
+	/*color: #253D1D;*/
+	float: left;
+	color: #fff;
+	font-size: 5vh;
 	width: 48vw;
-	text-align: center;
-	margin: 1vh;
+	/*text-align: center;*/
+	margin: 4	vh;
 }
 
-h2 {
+/*h2 {
 	color: #253D1D;
 	width: 15vw;
 	margin: 1vh;
@@ -37,34 +101,45 @@ h2 {
 	font-weight: 1vh;
 	border-radius: 5px;
 	padding: 10px 30px;
-	box-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-	text-align: center;
-}
+	/*box-shadow: 1px 1px 2px rgba(0,0,0,0.7);*/
+	/*text-align: center;*/
+/*}*/
 
 #usernamePerfil {
-	margin: 1vh 17.5vw;
+	/*margin: 1vh 17.5vw;*/
+	margin-top: 10px;
+	margin-right: 15px;
+	font-size: 17px;
+	color: #fff;
+	float: right;
+	width: auto;
 }
 
 button {
 	color: #fff;
 	background-color: #253D1D;
-	border-radius: 10px;
+	border-style: none;
 	padding: 10px 10px;
-	margin: 1vh;
-	
+	margin: 1px;
+	width: 202px;
+
+
 }
 
 input {
-	width: 20vw;
-	height: 5vh;
+	width: 400px;
+	height: 15px;
 	display: block;
-	margin: 1vh;
-	padding: 1vh;
+	margin: 3px;
+	padding: 3px;
 	border-radius: 2px;
 }
 
 #searchbar {
-	width: 50vw;
+	width: 400px;
+	margin: auto;
+	margin-top: 30px;
+	height: 15px;
 }
 
 #searchUsersDiv {
@@ -113,7 +188,7 @@ section.overlay .debt {
 	color:#F4F4F4;
 	border-radius: 5px;
 	padding: 10px;
-	box-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+	/*box-shadow: 1px 1px 2px rgba(0,0,0,0.7);*/
 	overflow-x:auto;
 
 }
@@ -129,7 +204,7 @@ section.overlay .debt div {
 #friendsdebt div {
 	width: 350px;
 	margin: 10px;
-	
+
 }
 
 #friendsdebt div .label {

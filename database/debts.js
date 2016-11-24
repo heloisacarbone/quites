@@ -12,6 +12,10 @@ module.exports = function () {
 
         add: function (owner, users, value, division, callback) {
             debts.insert({owner:owner, users: users, value: value, division: division}, {safe: true}, callback);
+        },
+
+        find: function(userId, callback) {
+            debts.find({$or: [{owner: userId}, {"users.id": {$in: userId}]})
         }
     };
 }

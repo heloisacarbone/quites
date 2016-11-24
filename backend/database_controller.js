@@ -20,7 +20,7 @@ function initialize_modules(main_database) {
 var exportable = {
 
     connect: function (type, callback) {
-        
+
         var mongo_uri = 'mongodb://127.0.0.1:27017/quites';
 
         if (type === "prod") {
@@ -34,7 +34,7 @@ var exportable = {
 
     initialize: function (callback) {
         // mudar para dev quando for rodar
-        exportable.connect("prod", function (error, client) {
+        exportable.connect("dw", function (error, client) {
             if (error) {
                 throw error;
             }
@@ -42,9 +42,9 @@ var exportable = {
             console.log('database.MongoClient.connect: Database connected @quites');
 
             initialize_modules(client);
-			
+
 			callback();
-            
+
         });
     }
 };

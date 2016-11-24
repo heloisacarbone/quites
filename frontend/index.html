@@ -2,31 +2,38 @@
 <html>
 <head>
 	<title>Quites!</title>
-	
+	<link rel="stylesheet" type="text/css" href="css/general.css">
 	<script src="../libs/jquery-2.2.2.js"></script>
 	<script src="js/cookies.js"></script>
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
 	<script src="js/registration_login.js"></script>
-</head>	
+</head>
 <body>
-	
-	<h1>Quites!</h1>
-	<div class="login">
-		
-		<div class="form">
-			<h2>Email ou Username</h2>
-			<input type="text" name="identification" id="loginEmail" value="">
-			<h2>Password</h2>
 
-			<input type="password" name="password" id="loginPassword" value="">
-			<div class="buttons">
-				<button onClick="login()">Log In</button>
-				<button class="signup" onclick="location.href = 'register.html';">Sign Up</button>
+	<div class="header">
+		<h1 class="logo">Quites!</h1>
+		<h2 id="usernamePerfil">Bem vindo </h2>
+	</div>
+	<div class="login">
+
+
+		<div class="box boxIndex">
+			<div class="form">
+				<h2>Email ou Username</h2>
+				<input type="text" name="identification" id="loginEmail" value="">
+				<h2>Password</h2>
+
+				<input type="password" name="password" id="loginPassword" value="">
+				<div class="buttons">
+					<button onClick="login()">Log In</button>
+					<button class="signup" onclick="location.href = 'register.html';">Sign Up</button>
+				</div>
 			</div>
 		</div>
-		
+
+
 	</div>
-	
+
 </body>
 </html>

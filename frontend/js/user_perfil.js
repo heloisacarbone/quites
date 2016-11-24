@@ -1,5 +1,5 @@
 function loadUserPerfil() {
-	
+
 	var socket = io.connect("/");
 	var data = {
         action_type: "getUser",
@@ -14,11 +14,11 @@ function loadUserPerfil() {
     socket.on("message",function(message){
 
         message = JSON.parse(message);
-    
+
         if (message.data !== undefined) {
-        	$("#usernamePerfil").html(message.data.name);
-          
-        } 
+        	$("#usernamePerfil").append(message.data.name);
+
+        }
 
     });
 }
