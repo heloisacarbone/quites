@@ -28,6 +28,9 @@ function loadDebt() {
                 console.error('database.add: Could not return debts. err:', err);
                 message_to_client['data'] = undefined;
                 socket.send(JSON.stringify(message_to_client));
+            } else {
+                message_to_client['data'] = debt;
+                socket.send(JSON.stringify(message_to_client));
             }
         });
     }

@@ -15,7 +15,7 @@ module.exports = function () {
         },
 
         find: function(userId, callback) {
-            debts.find({$or: [{owner: userId}, {"users.id": {$in: userId}]})
+            debts.find({"users.id": userId}).toArray(callback);
         }
     };
 }
