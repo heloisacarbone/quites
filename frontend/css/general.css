@@ -202,7 +202,8 @@ section.overlay .debt div {
 }
 
 #friendsdebt div {
-	width: 350px;
+	display: block;
+	width: 330px;
 	margin: 10px;
 
 }
@@ -210,11 +211,10 @@ section.overlay .debt div {
 #friendsdebt div .label {
 	float: left;
 	font-size: 30px;
-	width: 100px;
+	
 }
 
 #friendsdebt div .inputcheck {
 	float: left;
-	width: 50px;
-	line-height: -10px;
+	
 }

@@ -20,7 +20,7 @@ function addDebt(socket, req) {
 
 }
 
-function loadDebt() {
+function loadDebt(socket, req) {
     var message_to_client = {};
     if (req.message !== null && req.message !== undefined) {
         database['debts'].find(req.message.user_id, function (err, debt) {
