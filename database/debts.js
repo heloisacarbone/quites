@@ -15,7 +15,11 @@ module.exports = function () {
         },
 
         find: function(userId, callback) {
-            debts.find({"users.id": userId}).toArray(callback);
+            debts.find({"users.id": userId, "quites": {$exists:false}}).toArray(callback);
+        },
+
+        quitar: function(id, callback) {
+            debts.update({_id: new mongo.ObjectID(id)}, {$set: {quites: true}}, {safe: true}, callback);
         }
     };
 }

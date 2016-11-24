@@ -9,8 +9,10 @@ describe('Registration and Login', function() {
         });
     });
   	it('it should add a new user', function() {
-   
-   		database['users'].add("admin", "admin", "admin", "admin", "2016-10-05","male", function(err, obj){
+
+      var rand = Math.random();
+      var name = "admin";
+   		database['users'].add(name, name, name, name, "2016-10-05","male", function(err, obj){
 
     		assert.ifError(err);
         	assert.ok(!obj);

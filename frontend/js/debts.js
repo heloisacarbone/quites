@@ -95,7 +95,7 @@ function loadDebt() {
                             html += u.name;
                         }
                     });
-                    html += '</div><div class="inputcheck"><button onclick="quitar(\"' + a._id + '\")">Quites</button></div></div>';
+                    html += "</div><div class='inputcheck'><button onclick='quitar(\"" + a._id.trim() + "\")''>Quites</button></div></div>";
                 }   else {
                     var v = Number(a.value)/a.users.length;
                     html+='<div><div class="label">Você precisa pagar R$' + v.toFixed(2) +' para ';
@@ -120,4 +120,33 @@ function viewDebt() {
     openOverlay();
     addLoadOverlay();
     loadDebt();
+}
+
+function quitar(id) {
+    var socket = io.connect("/");
+    var data = {
+        action_type: "quitar",
+        message: {
+            user_id: getCookies().client_id,
+            debt_id: id
+            
+        }
+    };
+
+    socket.send(JSON.stringify(data));
+
+    socket.on("message",function(message){
+
+        message = JSON.parse(message);
+
+        if (message.data !== undefined) {
+
+            alert("Divida Quitada");
+
+            closeOverlay();
+            
+
+        }
+
+    });
 }

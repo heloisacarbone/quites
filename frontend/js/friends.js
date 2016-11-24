@@ -46,7 +46,7 @@ function loadFriends() {
 
         	var htmlFriends = "<div>";
         	message.data.friends.forEach(function(friend) {
-        		console.log(friend);
+        		
         		htmlFriends += '<div class="label"><label>'+friend.name+'</label></div><div class="inputcheck"><input type="checkbox" name="'+friend.id+'-'+friend.name+'"></div>';
         	});
         	htmlFriends+= "</div>";
