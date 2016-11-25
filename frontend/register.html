@@ -2,24 +2,34 @@
 <html>
 <head>
 	<title>Quites!</title>
-    
+    	<link rel="stylesheet" type="text/css" href="css/general.css">
     <script src="../libs/jquery-2.2.2.js"></script>
     <script src="../js/cookies.js"></script>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
     <script src="../js/registration_login.js"></script>
-</head>	
+</head>
 <body>
-	<h1>Quites! - Registro</h1>
-	<button onclick="location.href = 'index.html';">Login</button>
-		
+
+	<div class="header">
+		<h1 class="logo">Quites!</h1>
+		<h2 id="usernamePerfil"></h2>
+		<button style="float:right; color:#fff" onclick="location.href = 'index.html';">Login</button>
+	</div>
+	<div class="">
+
+	</div>
+
+	<!-- <button onclick="location.href = 'index.html';">Login</button> -->
+
 	<div class="register">
+			<h1 style="color:#253D1D; width: 100%; text-align: center;;font-size: 28px;">Cadastro</h1>
 		<p id="notice" style="color:red"></p>
 
-        <h3>Username *</h3> 
+        <h3>Username *</h3>
         <input type="text" id="reg_username" />
 
-        <h3>Email *</h3> 
+        <h3>Email *</h3>
         <input type="email" id="reg_email" />
 
         <h3>Password *</h3>
@@ -28,20 +38,20 @@
         <h3>Repeat Password *</h3>
         <input type="password" id="reg_rep_password" />
 
-        <h3>Name *</h3> 
+        <h3>Name *</h3>
         <input type="text" id="reg_name" />
 
-        <h3>Date of Birth *</h3> 
+        <h3>Date of Birth *</h3>
         <input type="date" id="reg_dob" data-date-inline-picker="true" />
 
-        <h3>Gender *</h3> 
+        <h3>Gender *</h3>
         <select id="reg_gender">
           <option value="female">Female</option>
           <option value="male">Male</option>
         </select>
-        		
-        <button class="circlebutton" onclick="registerUser()">Sign Up</button>
-		
+
+        <button class="btnSignUp" onclick="registerUser()">Sign Up</button>
+
     </div>
 </body>
 </html>

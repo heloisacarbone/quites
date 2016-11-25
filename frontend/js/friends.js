@@ -15,13 +15,13 @@ function addFriend(friendId, name) {
     socket.on("message",function(message){
 
         message = JSON.parse(message);
-    
+
         if (message.data !== undefined) {
         	alert("Você adicionou "+name+" como amigo" );
-          
-        } 
 
-    }); 
+        }
+
+    });
 }
 
 function loadFriends() {
@@ -31,7 +31,7 @@ function loadFriends() {
         action_type: "getUser",
         message: {
             user_id: getCookies().client_id
-         
+
         }
 
     };
@@ -41,20 +41,20 @@ function loadFriends() {
     socket.on("message",function(message){
 
         message = JSON.parse(message);
-    
+
         if (message.data !== undefined && message.data.friends !== null && message.data.friends !== undefined) {
 
         	var htmlFriends = "<div>";
         	message.data.friends.forEach(function(friend) {
-        		
-        		htmlFriends += '<div class="label"><label>'+friend.name+'</label></div><div class="inputcheck"><input type="checkbox" name="'+friend.id+'-'+friend.name+'"></div>';
+
+        		htmlFriends += '<div class="label"><label>'+friend.name+'</label><input type="checkbox" name="'+friend.id+'-'+friend.name+'"></div>';
         	});
         	htmlFriends+= "</div>";
 
         	$("#friendsdebt").html(htmlFriends);
-          
-        } 
 
-    }); 
+        }
+
+    });
 
 }

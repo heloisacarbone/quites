@@ -8,13 +8,13 @@ function openOverlay() {
 }
 
 function addDebtOverlay() {
-	var html = '<div><div><h2>Adicionar Divida</h2></div><div></div></div><button type="button" class="btnSair" onClick="closeOverlay()">X</button><input type="text" placeholder="R$ 000.00"><div id="friendsdebt"></div><button type="button" onclick="addDebt()">Adicionar Divida</button>';
+	var html = '<div><div><h2  style="margin-left:80px;">Adicionar Divida</h2></div><div></div></div><button type="button" class="btnSair" onClick="closeOverlay()">X</button><input class="inputOverlay" type="text" placeholder="R$ 000.00"><div id="friendsdebt"></div><button class="btnAddDivida" type="button" onclick="addDebt()">Adicionar Divida</button>';
 	$(".overlay .debt").html(html);
 }
 
 function addLoadOverlay() {
-    var html = '<div><div><h2>Dividas</h2></div><div></div></div><button type="button" class="btnSair" onClick="closeOverlay()">X</button><div id="friendsdebt"></div>';
-    $(".overlay .debt").html(html);   
+    var html = '<div><div><h2 style="margin-left:134px;">Dividas</h2></div><div></div></div><button type="button" class="btnSair" onClick="closeOverlay()">X</button><div id="friendsdebt"></div>';
+    $(".overlay .debt").html(html);
 }
 
 function openDebtOverlay(){
@@ -95,7 +95,7 @@ function loadDebt() {
                             html += u.name;
                         }
                     });
-                    html += "</div><div class='inputcheck'><button onclick='quitar(\"" + a._id.trim() + "\")''>Quites</button></div></div>";
+                    html += "</div><div class='inputcheck'><button class='btnQuitar'onclick='quitar(\"" + a._id.trim() + "\")''>Quites</button></div></div>";
                 }   else {
                     var v = Number(a.value)/a.users.length;
                     html+='<div><div class="label">Você precisa pagar R$' + v.toFixed(2) +' para ';
@@ -105,9 +105,9 @@ function loadDebt() {
                         }
                     });
                     html += '</div></div>';
-                }     
+                }
                 $("#friendsdebt").html(html);
-        		
+
 			});
 
 
@@ -129,7 +129,7 @@ function quitar(id) {
         message: {
             user_id: getCookies().client_id,
             debt_id: id
-            
+
         }
     };
 
@@ -144,7 +144,7 @@ function quitar(id) {
             alert("Divida Quitada");
 
             closeOverlay();
-            
+
 
         }
 

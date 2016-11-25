@@ -143,12 +143,14 @@ input {
 }
 
 #searchUsersDiv {
-	border-style: solid;
-    border-width: 2px;
-    border-radius: 5px;
-    width: 20vw;
-    padding: 1vw;
-    margin: 1vh 14vw;
+	/*border-style: solid;*/
+    /*border-width: 2px;*/
+    /*border-radius: 5px;*/
+    width: 500px;
+    /*padding: 1vw;*/
+    /*margin: 1vh 14vw;*/
+	margin: auto;
+	margin-top: 30px;
 }
 
 #searchUsersDiv div {
@@ -182,14 +184,16 @@ section.overlay .debt {
 	top: 80px;
 	margin-right: auto;
 	margin-left: auto;
-	width: 25vw;
-	max-height: 600px;
-	background-color:#A9A9A9;
+	width: 350px;
+	/*max-height: 600px;*/
+	height: 400px;
+	/*background-color:#A9A9A9;*/
+	background-color: rgb(137, 154, 131);
 	color:#F4F4F4;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 	padding: 10px;
 	/*box-shadow: 1px 1px 2px rgba(0,0,0,0.7);*/
-	overflow-x:auto;
+	/*overflow-x:auto;*/
 
 }
 
@@ -199,6 +203,11 @@ section.overlay .debt div {
 
 #friendsdebt {
 	width: 350px;
+	height: 250px;
+	margin-top: 20px;
+	/*overflow-y: scroll;*/
+	overflow: auto;
+
 }
 
 #friendsdebt div {
@@ -210,11 +219,68 @@ section.overlay .debt div {
 
 #friendsdebt div .label {
 	float: left;
-	font-size: 30px;
-	
+	font-size: 20px;
+	width: 300px;
+
 }
 
 #friendsdebt div .inputcheck {
 	float: left;
-	
+
+
+}
+
+input[type="checkbox"]{
+
+	width: 20px;
+	float: right;
+	display: inline-block;
+
+}
+.inputOverlay{
+
+	width: 300px;
+	margin: auto;
+}
+
+.btnAddDivida{
+margin: auto;
+margin-left: 70px;
+}
+.btnQuitar{
+margin-left: 50px;
+
+}
+.register{
+	width: 500px;
+	padding: 25px;
+	margin: auto;
+	background-color: #fff;
+	margin-top: 50px
+
+
+
+}
+
+.btnSignUp{
+
+display: block;
+margin-left: 150px;
+
+}
+.friendName{
+
+
+	    float: left;
+	    width: 99px;
+	    margin: 0px;
+	    margin-top: 9px;
+
+
+}
+
+.btnAddAmigo{
+
+float: right;
+
 }
