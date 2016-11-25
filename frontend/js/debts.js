@@ -76,8 +76,8 @@ function loadDebt() {
     socket.on("message",function(message){
 
         message = JSON.parse(message);
-
-        if (message.data !== undefined) {
+        console.log(message.data);
+        if (message.data !== undefined && message.data.length > 0) {
 			var html = "";
             message.data.forEach( function (a) {
                 if (a.owner === getCookies().client_id) {
@@ -111,6 +111,8 @@ function loadDebt() {
 			});
 
 
+        } else {
+            $("#friendsdebt").html("Você está Quites!");
         }
 
     });
